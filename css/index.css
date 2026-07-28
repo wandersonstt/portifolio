@@ -204,3 +204,48 @@ footer a:hover {
     
 }
 
+
+
+.tech-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tech-tags span {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+}
+
+.btn-projeto {
+    display: center;
+    text-decoration:  none;
+    color: var(--cor-texto);
+    border:none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: below;
+    
+}
+
+.btn-projeto:hover {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+}
+
+.btn-projeto:active {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+}
