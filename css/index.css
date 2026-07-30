@@ -249,3 +249,61 @@ footer a:hover {
     background-color: var(--cor-texto);
     color: var(--cor-fundo);
 }
+
+
+#api-rede {
+    text-align: center;
+    margin: 40px auto;
+
+}
+
+.terminal-box {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    text-align: left;
+}
+
+
+
+.terminal-header {
+background-color: #333;
+padding: 10px;
+display: flex;
+gap: 8px;
+
+
+}
+
+.dot {
+    width: 10px;
+    height: 12px;
+    border-radius: 50%;
+
+
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.terminal-body {
+    padding: 20px;
+    color: #00ff00; /* Verde clássico de terminal */
+    font-family: 'Courier New', Courier, monospace; /* Fonte de código */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* O texto piscando como um cursor de verdade */
+.cursor-pisca {
+    animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
