@@ -6,7 +6,11 @@
     --cor-texto: #333333;
     --cor-primaria: #0056b3;
     --cor-fundo-card: #ffffff;
+
+
 }
+
+
 
 .dark-mode {
     --cor-fundo: #1a1a1a;
@@ -25,7 +29,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    margin: 0;
+    margin: 50px;
     padding: 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
     /* Transição para o modo escuro */
@@ -44,105 +48,89 @@ footer {
     padding: 20px 0;
 }
 
-/* 3. MENU */
-nav ul {
-    list-style: none;
-    padding: 0;
+/* =========================
+   MENU CÁPSULA EXPANDÍVEL 
+   ========================= */
+
+.menu-capsula {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cor-fundo);
+    /* Fundo bem escuro, estilo painel técnico */
+    padding: 6px 10px;
+    border-radius: 50px;
+    /* Formato de pílula/cápsula */
     display: flex;
-    gap: 20px;
+    gap: 5px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    /* Sombra densa */
+    border: 1px solid #000000;
+    z-index: 1000;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-    /* Corrigido para usar a variável */
-    font-weight: bold;
-}
-
-nav a:hover {
+.menu-capsula a {
+    display: flex;
+    align-items: center;
     color: var(--cor-texto);
-    /* Corrigido para interagir com o modo escuro */
+    /* Ícones começam cinzas e discretos */
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 30px;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Animação super fluida */
+    overflow: hidden;
 }
 
-/* 4. PROJETOS E CARDS */
-#projetos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    /* Ajustei de 10px para 20px para respirar melhor */
-    margin-top: 20px;
+/* O efeito quando passa o mouse */
+.menu-capsula a:hover {
+    background: #1e1e1e;
+    color: #00ff00;
+    /* Verde de monitoramento/terminal */
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
 }
 
-#projetos article {
-    background-color: var(--cor-fundo-card);
-    /* Corrigido para usar a variável */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+.menu-capsula i {
+    font-size: 1.2rem;
+    min-width: 20px;
+    /* Mantém o ícone centralizado na expansão */
+    text-align: center;
+}
 
-    /* Configuração da Animação adicionada! */
+/* Esconde o texto do menu inicialmente */
+.menu-capsula .texto-menu {
+    max-width: 0;
     opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
+    margin-left: 0;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    white-space: nowrap;
+    /* Impede que o texto quebre a linha */
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-#projetos article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+/* Faz o texto deslizar e aparecer no Hover */
+.menu-capsula a:hover .texto-menu {
+    max-width: 120px;
+    /* Espaço suficiente para a palavra aparecer */
+    opacity: 1;
+    margin-left: 12px;
 }
 
-#projetos article h3 {
-    margin-top: 0;
-    color: var(--cor-primaria);
-    /* Corrigido para usar a variável */
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-/* Atrasos da animação em cascata */
-#projetos article:nth-child(1) {
-    animation-delay: 0.1s;
+img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
 }
 
-#projetos article:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-#projetos article:nth-child(3) {
-    animation-delay: 0.5s;
-}
-
-/* O Roteiro da Animação */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 5. RESPONSIVIDADE (Tudo que for celular fica AQUI DENTRO) */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        /* Corrigido de "colunm" */
-        align-items: center;
-        gap: 10px;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    img {
-        max-width: 150px;
-        display: block;
-        margin: 0 auto;
-    }
-}
 
 
 footer {
@@ -150,7 +138,7 @@ footer {
     text-align: center;
     margin-top: 60px;
     padding: 40px 20px;
-    background-color: var(--cor-fundo-card);
+    background-color: #dddddd00;
     border-top: 3px solid var(--cor-primaria);
     border-radius: 8px 8px 0 0;
 }
@@ -342,16 +330,16 @@ footer a:hover {
 
 
 .box-txt {
-   background-color: var(--cor-fundo-card);
-  border: auto;
-  padding: 20px;
-  margin: 15px;
-  border-radius: 8px;
-  width: auto;
-  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
-  
-  /* SEGREDO: Faz qualquer mudança demorar 0.3 segundos e ser suave */
-  transition: all 0.3s ease;
+    background-color: var(--cor-fundo-card);
+    border: auto;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+
+    /* SEGREDO: Faz qualquer mudança demorar 0.3 segundos e ser suave */
+    transition: all 0.3s ease;
 }
 
 .box-txt:hover {
@@ -359,44 +347,174 @@ footer a:hover {
     color: var(--cor-texto);
     transform: translateY(-5px);
     box-shadow: 6px 8px 15px rgba(0, 0, 0, 0.3);
-   
+
 
 }
 
 
 .box-txt p {
-  /* Nome-da-animação | Tempo de duração | Estilo de movimento | Mantém no estado final */
-  animation: textoChegando 1s ease-out forwards;
+    /* Nome-da-animação | Tempo de duração | Estilo de movimento | Mantém no estado final */
+    animation: textoChegando 1s ease-out forwards;
 }
 
 @keyframes textoChegando {
-  0% {
-    opacity: 0; /* Começa totalmente invisível */
-    transform: translateX(-30px); /* Começa 30 pixels para a esquerda */
-  }
-  100% {
-    opacity: 1; /* Termina totalmente visível */
-    transform: translateX(0); /* Termina na posição original (0) */
-  }
+    0% {
+        opacity: 0;
+        /* Começa totalmente invisível */
+        transform: translateX(-30px);
+        /* Começa 30 pixels para a esquerda */
+    }
+
+    100% {
+        opacity: 1;
+        /* Termina totalmente visível */
+        transform: translateX(0);
+        /* Termina na posição original (0) */
+    }
 
 }
 
- /* Aplicamos a animação na foto */
+/* Aplicamos a animação na foto */
 .foto-perfil {
     border-radius: 50%;
     /* Chama a animação 'levitar', dura 3 segundos, vai e volta, repetindo para sempre */
-    animation: levitar 3s ease-in-out infinite; 
+    animation: levitar 3s ease-in-out infinite;
 }
 
 /* Criamos a regra da animação passo a passo */
 @keyframes levitar {
     0% {
-        transform: translateY(0); /* Posição inicial */
+        transform: translateY(0);
+        /* Posição inicial */
     }
+
     50% {
-        transform: translateY(-15px); /* No meio do tempo, sobe 15 pixels */
+        transform: translateY(-15px);
+        /* No meio do tempo, sobe 15 pixels */
     }
+
     100% {
-        transform: translateY(0); /* Volta para a posição inicial */
+        transform: translateY(0);
+        /* Volta para a posição inicial */
     }
+}
+
+/* 4. PROJETOS E CARDS */
+#projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    /* Ajustei de 10px para 20px para respirar melhor */
+    margin-top: 20px;
+}
+
+#projetos article {
+    background-color: var(--cor-fundo-card);
+    /* Corrigido para usar a variável */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    /* Configuração da Animação adicionada! */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+#projetos article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#projetos article h3 {
+    margin-top: 0;
+    color: var(--cor-primaria);
+    /* Corrigido para usar a variável */
+}
+
+/* Atrasos da animação em cascata */
+#projetos article:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#projetos article:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+#projetos article:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+/* O Roteiro da Animação */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 5. RESPONSIVIDADE (Tudo que for celular fica AQUI DENTRO) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        /* Corrigido de "colunm" */
+        align-items: center;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    img {
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* =========================
+   ESTILO DA LOGO (TERMINAL)
+   ========================= */
+
+.logo h1 {
+    font-size: 2rem;
+    color: var(--cor-texto);
+    font-family: 'Courier New', Courier, monospace; /* Fonte de programação */
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+    
+}
+
+/* Pinta os símbolos < e /> de verde neon */
+.logo .cor-destaque {
+    color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.4); /* Leve brilho nas tags */
+}
+
+/* Cria o cursor de terminal piscando */
+.logo .cursor-pisca {
+    color: #00ff00;
+    font-weight: normal;
+    animation: piscarLogo 1s infinite; /* Chama a animação abaixo */
+}
+
+/* Animação que faz o underline aparecer e sumir */
+@keyframes piscarLogo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.logo {
+    position: absolute; /* Fica ancorada apenas no topo, some quando você rola a página */
+    top: 35px; 
+    left: 40px; 
+    z-index: 1000; 
 }
