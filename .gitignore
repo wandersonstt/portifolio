@@ -1,0 +1,19 @@
+# Arquivos ocultos do Sistema Operacional (Windows e Mac)
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Configurações de Editores de Código (VS Code, Visual Studio, etc.)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs e arquivos de erro
+*.log
+npm-debug.log*
+
+# Pastas de pacotes (Caso instale bibliotecas via Node.js no futuro)
+node_modules/

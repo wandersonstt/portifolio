@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Meu primeiro Portfólio!">
     <meta name="keywords" content="Portfólio, Wanderson, Engenharia de Software, HTML, CSS, JS, C#">
-    <meta name="author" content="Wanderson Saraiva Torres"> 
+    <meta name="author" content="Wanderson Saraiva Torres">
     <title>Portfólio</title>
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js" defer></script>
@@ -15,15 +16,16 @@
 
 
 </head>
+
 <body>
-    
+
 
     <header>
 
-        <button id="btn-tema"><i class="fa-solid fa-moon"></i>Modo Escuro </button> 
+        <button id="btn-tema"><i class="fa-solid fa-moon"></i>Modo Escuro </button>
 
 
-        <h1>Meu Nome é Wanderson Saraiva Torres</h1>
+        <h1>Portfólio</h1>
         <nav>
             <ul>
                 <li><a href="#sobre"> Sobre mim</a></li>
@@ -32,22 +34,27 @@
                 <li><a href="#contato"> Contato</a></li>
             </ul>
         </nav>
-        </header>
-        <main>
+    </header>
+    <main>
 
-            <section id="sobre">
-                <h2> Sobre Mim</h2>
+        <section id="sobre">
+            <h2> Sobre Mim</h2>
 
-                <img src="imgp/perfil.jpg" alt="Foto do desenvolvedor Wanderson">
+            <img src="imgp/perfil.jpg" alt="Foto do desenvolvedor Wanderson" class="foto-perfil">
+            <div class="box-txt">
+                <p>Ola! Me chamo Wanderson. Sou um profisisonal focado em resolver problema e construir sistemas
+                    eficientes. Gosto de entender como as coisas funcionam por baixo dos panos, desde o codigo e
+                    infraestrutura até o hardware.</p>
+            </div>
 
-                <p>Ola! Sou um profisisonal focado em resolver problema e construir sistemas eficientes. Gosto de entender como as coisas funcionam por baixo dos panos, desde o codigo e infraestrutura até o hardware.                
-                </p>
 
-            </section>
 
-            <section id="skills">
-              <h2>Minhas Habilidades</h2>
-              <ul>
+
+        </section>
+
+        <section id="skills">
+            <h2>Minhas Habilidades</h2>
+            <ul>
                 <li>C# e ecossitemas .NET(<i>Aprendendo)</i></li>
                 <li>Redes de Computadores</li>
                 <li>Manutenção de Hardware</li>
@@ -57,102 +64,109 @@
                 <li>Python (<i>Aprendendo</i>)</li>
                 <li>PHP (<i>Aprendendo</i>)</li>
                 <li>Json (<i>Aprendendo</i>)</li>
-              </ul>
-            </section>
-            
-            <div> <h2 id="text-projeto">Meus Projetos</h2></div>
-            
-            <section id="projetos">
-                
-                <article> <h3>NOC Monitoramento</h3>
-                    <p>Um sistema customizado de monitoramento de redes desenvolvido em HTML, CSS, PHP, JSON, JAVASCRIPT.</p> 
-                    <div class="tech-tags">
-                        <span>PHP</span>
-                        <span>HTML</span>
-                        <span>JavaScript</span>
-                        <span>JSON</span>
-                        
-                    </div>
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
+            </ul>
+        </section>
+
+        <div>
+            <h2 id="text-projeto">Meus Projetos</h2>
+        </div>
+
+        <section id="projetos">
+
+            <article>
+                <h3>NOC Monitoramento</h3>
+                <p>Um sistema customizado de monitoramento de redes desenvolvido em HTML, CSS, PHP, JSON, JAVASCRIPT.
+                </p>
+                <div class="tech-tags">
+                    <span>PHP</span>
+                    <span>HTML</span>
+                    <span>JavaScript</span>
+                    <span>JSON</span>
+
+                </div>
+                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
                     <i class="fa-brands fa-github"></i> Ver codigo
-                    </a>
-                </article>
+                </a>
+            </article>
 
-                    
-                       
-                <article> <h3> Bot Telegram Milvus</h3>
-                    <p>Bot para telegram, para chegar chamado do milvus</p>
-                    <div class="tech-tags">
-                        <span>Python</span>
-                        <span>WebHook</span>
-                        <span>Telegram</span>
 
-                    </div>
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
+
+            <article>
+                <h3> Bot Telegram Milvus</h3>
+                <p>Bot para telegram, para chegar chamado do milvus</p>
+                <div class="tech-tags">
+                    <span>Python</span>
+                    <span>WebHook</span>
+                    <span>Telegram</span>
+
+                </div>
+                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
                     <i class="fa-brands fa-github"></i> Ver codigo
-                    </a>
-                </article>
-                               
-                
-                
-                <article> <h3> Conversor de pdf</h3>
-                    <p>Feito um Conversor de pdf em C# .NET </p>
-                    <div class="tech-tags">
-                        <span>C#</span>
-                        <span>.NET</span>
-                        
+                </a>
+            </article>
 
-                    </div>
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
+
+
+            <article>
+                <h3> Conversor de pdf</h3>
+                <p>Feito um Conversor de pdf em C# .NET </p>
+                <div class="tech-tags">
+                    <span>C#</span>
+                    <span>.NET</span>
+
+
+                </div>
+                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
                     <i class="fa-brands fa-github"></i> Ver codigo
-                    </a>
-                </article>
+                </a>
+            </article>
 
 
-                 
-                <article> <h3>Baixador de video do youtube</h3>
-                    <p>Programa para baixa videos do youtube  C# .NET Biblioteca, FFmpeg (Manipulação de Mídia), yt-dlp (Manipulação de Streams Web)</p>
-                    <div class="tech-tags">
-                        <span>C#</span>
-                        <span>.NET</span>
-                        
 
-                    </div>
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
+            <article>
+                <h3>Baixador de video do youtube</h3>
+                <p>Programa para baixa videos do youtube C# .NET Biblioteca, FFmpeg (Manipulação de Mídia), yt-dlp
+                    (Manipulação de Streams Web)</p>
+                <div class="tech-tags">
+                    <span>C#</span>
+                    <span>.NET</span>
+
+
+                </div>
+                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
                     <i class="fa-brands fa-github"></i> Ver codigo
-                    </a>
-                </article>
-                
-            </section>
+                </a>
+            </article>
 
-        </main>
-           
+        </section>
 
+        <section id="api-rede">
+            <h2>🌍 Conexão do Visitante</h2>
+            <p>Testando consumo de API Pública em tempo real:</p>
 
-        <footer id="contato">
-            <h2>Vamos conversar ?</h2>
-            <div class="links-contato">
-               <a href="mailto:wanderson_st@hotmail.com.br"><i class="fa-solid fa-envelope"></i> Mande um E-mail</a>
-               <a href="https://github.com/wandersonstt"><i class="fa-brands fa-github"></i> GitHub</a>
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body" id="dados-rede">
+                    <p>> Iniciando varredura de rede...</p>
+                    <!-- O JavaScript vai injetar os dados reais aqui! -->
+                </div>
             </div>
-        </footer>
+        </section>
+    </main>
+
+
+
+    <footer id="contato">
+        <h2>Vamos conversar ?</h2>
+        <div class="links-contato">
+            <a href="mailto:wanderson_st@hotmail.com.br"><i class="fa-solid fa-envelope"></i> Mande um E-mail</a>
+            <a href="https://github.com/wandersonstt"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+    </footer>
 </body>
+
 </html>
-            
-                            
-                
-    
-    
-
-
-
-
-
-
-
-
-    
-    
-    
-
-
