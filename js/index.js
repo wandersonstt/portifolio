@@ -72,3 +72,6 @@ async function rastrearVisitante() {
         console.error('Erro na API:', erro);
     }
 }
+
+// Executa a função na hora que o site abre
+rastrearVisitante();
