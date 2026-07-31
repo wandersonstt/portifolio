@@ -17,16 +17,18 @@
 
 /* 2. CONFIGURAÇÕES GERAIS */
 html {
-    scroll-behavior: smooth; /* Corrigido de "smoot" */
+    scroll-behavior: smooth;
+    /* Corrigido de "smoot" */
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--cor-fundo); 
-    color: var(--cor-texto); 
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     margin: 0;
     padding: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transição para o modo escuro */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transição para o modo escuro */
 }
 
 img {
@@ -34,7 +36,9 @@ img {
     border-radius: 50%;
 }
 
-header, main, footer {
+header,
+main,
+footer {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px 0;
@@ -50,32 +54,36 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--cor-primaria); /* Corrigido para usar a variável */
+    color: var(--cor-primaria);
+    /* Corrigido para usar a variável */
     font-weight: bold;
 }
 
 nav a:hover {
-    color: var(--cor-texto); /* Corrigido para interagir com o modo escuro */
+    color: var(--cor-texto);
+    /* Corrigido para interagir com o modo escuro */
 }
 
 /* 4. PROJETOS E CARDS */
 #projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* Ajustei de 10px para 20px para respirar melhor */
+    gap: 20px;
+    /* Ajustei de 10px para 20px para respirar melhor */
     margin-top: 20px;
 }
 
 #projetos article {
-    background-color: var(--cor-fundo-card); /* Corrigido para usar a variável */
+    background-color: var(--cor-fundo-card);
+    /* Corrigido para usar a variável */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    
+
     /* Configuração da Animação adicionada! */
-    opacity: 0; 
-    animation: fadeInUp 0.8s ease-out forwards; 
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 #projetos article:hover {
@@ -85,13 +93,22 @@ nav a:hover {
 
 #projetos article h3 {
     margin-top: 0;
-    color: var(--cor-primaria); /* Corrigido para usar a variável */
+    color: var(--cor-primaria);
+    /* Corrigido para usar a variável */
 }
 
 /* Atrasos da animação em cascata */
-#projetos article:nth-child(1) { animation-delay: 0.1s; } 
-#projetos article:nth-child(2) { animation-delay: 0.3s; }
-#projetos article:nth-child(3) { animation-delay: 0.5s; }
+#projetos article:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#projetos article:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+#projetos article:nth-child(3) {
+    animation-delay: 0.5s;
+}
 
 /* O Roteiro da Animação */
 @keyframes fadeInUp {
@@ -99,16 +116,18 @@ nav a:hover {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
-    } 
+    }
 }
 
 /* 5. RESPONSIVIDADE (Tudo que for celular fica AQUI DENTRO) */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Corrigido de "colunm" */
+        flex-direction: column;
+        /* Corrigido de "colunm" */
         align-items: center;
         gap: 10px;
     }
@@ -150,7 +169,7 @@ footer h2 {
     margin-top: 20px;
 
 }
-    
+
 footer a {
     text-decoration: none;
     background-color: var(--cor-primaria);
@@ -187,7 +206,7 @@ footer a:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 
-    
+
 }
 
 #btn-tema:hover {
@@ -199,9 +218,9 @@ footer a:hover {
 }
 
 #btn-tema:active {
-    transform: translateY(2px)  scale(0.95);
+    transform: translateY(2px) scale(0.95);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    
+
 }
 
 
@@ -226,16 +245,16 @@ footer a:hover {
 
 .btn-projeto {
     display: center;
-    text-decoration:  none;
+    text-decoration: none;
     color: var(--cor-texto);
-    border:none;
+    border: none;
     padding: 8px 16px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     position: below;
-    
+
 }
 
 .btn-projeto:hover {
@@ -264,7 +283,7 @@ footer a:hover {
     margin: 20px auto;
     background-color: #1e1e1e;
     border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     text-align: left;
 }
@@ -282,14 +301,24 @@ footer a:hover {
     border-radius: 50%;
 }
 
-.dot.red { background-color: #ff5f56; }
-.dot.yellow { background-color: #ffbd2e; }
-.dot.green { background-color: #27c93f; }
+.dot.red {
+    background-color: #ff5f56;
+}
+
+.dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.dot.green {
+    background-color: #27c93f;
+}
 
 .terminal-body {
     padding: 20px;
-    color: #00ff00; /* Verde clássico de terminal */
-    font-family: 'Courier New', Courier, monospace; /* Fonte de código */
+    color: #00ff00;
+    /* Verde clássico de terminal */
+    font-family: 'Courier New', Courier, monospace;
+    /* Fonte de código */
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -300,6 +329,74 @@ footer a:hover {
 }
 
 @keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.box-txt {
+   background-color: var(--cor-fundo-card);
+  border: auto;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 8px;
+  width: auto;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+  
+  /* SEGREDO: Faz qualquer mudança demorar 0.3 segundos e ser suave */
+  transition: all 0.3s ease;
+}
+
+.box-txt:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transform: translateY(-5px);
+    box-shadow: 6px 8px 15px rgba(0, 0, 0, 0.3);
+   
+
+}
+
+
+.box-txt p {
+  /* Nome-da-animação | Tempo de duração | Estilo de movimento | Mantém no estado final */
+  animation: textoChegando 1s ease-out forwards;
+}
+
+@keyframes textoChegando {
+  0% {
+    opacity: 0; /* Começa totalmente invisível */
+    transform: translateX(-30px); /* Começa 30 pixels para a esquerda */
+  }
+  100% {
+    opacity: 1; /* Termina totalmente visível */
+    transform: translateX(0); /* Termina na posição original (0) */
+  }
+
+}
+
+ /* Aplicamos a animação na foto */
+.foto-perfil {
+    border-radius: 50%;
+    /* Chama a animação 'levitar', dura 3 segundos, vai e volta, repetindo para sempre */
+    animation: levitar 3s ease-in-out infinite; 
+}
+
+/* Criamos a regra da animação passo a passo */
+@keyframes levitar {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-15px); /* No meio do tempo, sobe 15 pixels */
+    }
+    100% {
+        transform: translateY(0); /* Volta para a posição inicial */
+    }
 }
