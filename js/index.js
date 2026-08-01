@@ -75,3 +75,75 @@ async function rastrearVisitante() {
 
 // Executa a função na hora que o site abre
 rastrearVisitante();
+
+
+/* =========================
+   PROJETO: WEB RECON SCANNER
+   ========================= */
+
+async function iniciarScan() {
+    const alvo = document.getElementById('alvo').value.trim();
+    const terminal = document.getElementById('resultado-scan');
+
+    if(!alvo) {
+        terminal.innerHTML = "> ERRO: Nenhum alvo especificado. Digite um domínio.";
+        return;
+    }
+
+    // 1. FILTRO: Limpa o texto digitado
+    let alvoLimpo = alvo.replace("https://", "")
+                        .replace("http://", "")
+                        .replace("www.", "")
+                        .split("/")[0];
+
+    terminal.innerHTML = `> Mapeando alvo: ${alvoLimpo}...\n> Resolvendo DNS...`;
+
+    try {
+        // ==========================================
+        // PASSO 1: RESOLUÇÃO DNS (Domínio -> IP)
+        // ==========================================
+        const dnsResponse = await fetch(`https://dns.google/resolve?name=${alvoLimpo}`);
+        const dnsData = await dnsResponse.json();
+
+        // Se o DNS não achar nada
+        if (!dnsData.Answer) {
+            terminal.innerHTML += `\n> FALHA: Servidor DNS não encontrou o domínio apontado.`;
+            return;
+        }
+
+        // Pega o IPv4 (Registro Tipo 1)
+        const registroIPv4 = dnsData.Answer.find(linha => linha.type === 1);
+        const ipAlvo = registroIPv4 ? registroIPv4.data : dnsData.Answer[0].data;
+
+        terminal.innerHTML += `\n> IP Localizado: [ ${ipAlvo} ]\n> Mapeando infraestrutura da rede...`;
+
+        // ==========================================
+        // PASSO 2: RASTREIO GEOJS (Nova API sem limites chatos)
+        // ==========================================
+        const ipResponse = await fetch(`https://get.geojs.io/v1/ip/geo/${ipAlvo}.json`);
+        const dados = await ipResponse.json();
+
+        // Se a API retornar vazio
+        if(!dados.ip) {
+            terminal.innerHTML += `\n> FALHA DA API: Não foi possível rastrear os dados deste IP.`;
+            return;
+        }
+
+        // Monta a tela final com as variáveis do GeoJS
+        terminal.innerHTML = `
+> ALVO LOCALIZADO
+--------------------------------
+> IP DO SERVIDOR : ${dados.ip}
+> TIPO DE ROTA   : IPv4
+> PAÍS           : ${dados.country} (${dados.country_code})
+> REGIÃO         : ${dados.city}, ${dados.region}
+> PROVEDOR (ISP) : ${dados.organization_name}
+> ASN            : AS${dados.asn}
+--------------------------------
+> Scan finalizado com sucesso.`;
+
+    } catch (erro) {
+        terminal.innerHTML += `\n> ERRO CRÍTICO: Conexão recusada pelo servidor de rastreio.`;
+        console.error(erro); 
+    }
+}
