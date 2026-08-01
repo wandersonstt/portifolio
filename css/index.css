@@ -233,6 +233,7 @@ footer a:hover {
 }
 
 .btn-projeto {
+    
     display: center;
     text-decoration: none;
     color: var(--cor-texto);
@@ -242,8 +243,9 @@ footer a:hover {
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    position: below;
-
+    margin-top: auto;
+    margin-bottom: 0;
+    align-self: center;
 }
 
 .btn-projeto:hover {
@@ -257,6 +259,40 @@ footer a:hover {
     background-color: var(--cor-texto);
     color: var(--cor-fundo);
 }
+
+.github-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.github-link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-radius: 0; /* Botão quadrado para preencher o fundo */
+    border: none;
+}
+
+/* O efeito hover mantendo as cores do seu tema */
+.github-link a:hover {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+}
+
+
+
 
 
 /* =========================
@@ -415,22 +451,22 @@ footer a:hover {
 #projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    /* Ajustei de 10px para 20px para respirar melhor */
+    gap: 15px;
     margin-top: 20px;
+    
 }
 
 #projetos article {
     background-color: var(--cor-fundo-card);
-    /* Corrigido para usar a variável */
-    padding: 20px;
+    padding: 15px 15px 50px 15px; /* Espaço extra (50px) no fundo para ancorar o botão */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgb(31, 249, 35);
     transition: transform 0.3s ease, background-color 0.3s ease;
-
-    /* Configuração da Animação adicionada! */
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
+    
+    position: relative; /* Transforma o card na âncora */
+    overflow: hidden; /* Corta as pontas do botão para acompanhar o arredondamento do card */
 }
 
 #projetos article:hover {
@@ -604,5 +640,48 @@ footer a:hover {
     white-space: pre-wrap; /* Mantém as quebras de linha do JavaScript */
     box-shadow: inset 0 0 10px #000000;
 }
+
+
+.lista-skills {
+    list-style-type: none;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(3, 244, 11, 0.984);
+
+}
+
+.lista-skills:hover {
+    box-shadow: 0 8px 16px rgba(229, 230, 229, 0.984);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.lista-skills li {
+    background-color: var(--cor-fundo-card);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 
