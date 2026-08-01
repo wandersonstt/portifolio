@@ -120,9 +120,12 @@ async function iniciarScan() {
         // ==========================================
         // PASSO 2: RASTREIO GEOJS (Nova API sem limites chatos)
         // ==========================================
-        const ipResponse = await fetch(`https://get.geojs.io/v1/ip/geo/${ipAlvo}.json`);
-        const dados = await ipResponse.json();
+       const urlApi = `https://get.geojs.io/v1/ip/geo/${ipAlvo}.json`;
+        const proxyUrl = `https://corsproxy.io/?` + encodeURIComponent(urlApi);
 
+        const ipResponse = await fetch(proxyUrl);
+        const dados = await ipResponse.json();
+        
         // Se a API retornar vazio
         if(!dados.ip) {
             terminal.innerHTML += `\n> FALHA DA API: Não foi possível rastrear os dados deste IP.`;
