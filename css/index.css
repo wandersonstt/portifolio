@@ -22,7 +22,7 @@
 /* 2. CONFIGURAÇÕES GERAIS */
 html {
     scroll-behavior: smooth;
-    /* Corrigido de "smoot" */
+    
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 }
 
 img {
-    max-width: 200px;
+    max-width: 150px;
     border-radius: 50%;
 }
 
@@ -460,11 +460,17 @@ footer a:hover {
 
 /* 5. RESPONSIVIDADE (Tudo que for celular fica AQUI DENTRO) */
 @media (max-width: 768px) {
+
+    
     nav ul {
         flex-direction: column;
-        /* Corrigido de "colunm" */
         align-items: center;
         gap: 10px;
+    }
+
+    body {
+        padding: 10px;
+        margin: 0;
     }
 
     h1 {
