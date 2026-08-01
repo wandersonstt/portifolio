@@ -54,19 +54,20 @@ footer {
 
 .menu-capsula {
     position: fixed;
-    top: 30px;
+    top: 0;
+    right: -50%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--cor-fundo);
     /* Fundo bem escuro, estilo painel técnico */
-    padding: 6px 10px;
-    border-radius: 50px;
+    padding: 1px 10px;
+    border-radius: 0;
     /* Formato de pílula/cápsula */
     display: flex;
-    gap: 5px;
+    gap: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     /* Sombra densa */
-    border: 1px solid #000000;
+    border: 0 solid #000000;
     z-index: 1000;
 }
 
@@ -601,3 +602,5 @@ footer a:hover {
     white-space: pre-wrap; /* Mantém as quebras de linha do JavaScript */
     box-shadow: inset 0 0 10px #000000;
 }
+
+
