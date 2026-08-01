@@ -469,9 +469,14 @@ footer a:hover {
     }
 
     body {
-        padding: 10px;
+        padding: 15px;
         margin: 0;
+        margin-top: 120px;
+        align-items: center;
+        
     }
+
+   
 
     h1 {
         font-size: 1.5rem;
@@ -522,7 +527,7 @@ footer a:hover {
 .logo {
     position: absolute; /* Fica ancorada apenas no topo, some quando você rola a página */
     top: 35px; 
-    left: 40px; 
+    left: 60px; 
     z-index: 1000; 
     align-self: flex-end;
     margin-top: 80px;
