@@ -377,9 +377,17 @@ footer a:hover {
 /* Aplicamos a animação na foto */
 .foto-perfil {
     border-radius: 50%;
-    /* Chama a animação 'levitar', dura 3 segundos, vai e volta, repetindo para sempre */
     animation: levitar 3s ease-in-out infinite;
+    box-shadow: 0 10px 10px rgba(200, 255, 100, 5.908);
+    transition: box-shadow 0.9s ease;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    
 }
+
 
 /* Criamos a regra da animação passo a passo */
 @keyframes levitar {
@@ -397,6 +405,9 @@ footer a:hover {
         transform: translateY(0);
         /* Volta para a posição inicial */
     }
+
+   
+
 }
 
 /* 4. PROJETOS E CARDS */
