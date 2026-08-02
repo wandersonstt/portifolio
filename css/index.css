@@ -510,59 +510,93 @@ footer a:hover {
 /* 5. RESPONSIVIDADE (Tudo que for celular fica AQUI DENTRO) */
 @media (max-width: 768px) {
     
-    
-  
-    
-    /* Transforma a lista de habilidades num trilho horizontal */
-    .lista-skills {
-        display: flex;
-        flex-wrap: nowrap; /* Impede que os itens pulem para a linha de baixo */
-        overflow-x: auto;  /* Permite rolar para os lados */
-        scroll-behavior: smooth; 
-        gap: 15px; /* Espaço entre as habilidades */
-        padding-bottom: 15px;
-        padding-left: 0; /* Remove o espaçamento padrão da tag <ul> */
-    }
-
-    /* Define o tamanho de cada card de habilidade */
-    .lista-skills .skill-item {
-        min-width: 70%; /* Ocupa 70% da tela para mostrar um pedaço do próximo */
-        flex-shrink: 0; 
-    }
-
-    /* Oculta a barra de rolagem para ficar mais bonito */
-    .lista-skills::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    /* 1. PROTEÇÃO E ALINHAMENTO GERAL DA PÁGINA */
+    html, body {
+        overflow-x: hidden !important; /* Corta qualquer vazamento lateral */
+        width: 100%;
     }
 
     body {
-        padding: 0x;
-        margin: 0 auto;
-        margin-top: 40px;
-        align-items: center;
-        
+        display: block !important; /* Desliga o "grid" do PC para não bugar o celular */
+        padding: 15px !important; /* Dá um espaço nas laterais para o texto não colar na tela */
+        margin: 0 !important;
+        margin-top: 60px !important; /* Dá espaço para o menu flutuante no topo */
     }
 
-   
-
-    h1 {
-        font-size: 1.5rem;
-        text-align: center;
+    /* Ajusta as caixas principais para não passarem da tela */
+    header, main, footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
     }
 
-    img {
-        max-width: 150px;
+    /* Centraliza títulos e a foto de perfil */
+    h1, h2 {
+        text-align: center !important;
+    }
+
+    img.foto-perfil {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 20px auto !important; /* Centraliza a foto e dá um espaço embaixo */
     }
+
+    /* 2. CARROSSEL DE HABILIDADES (1 por vez) */
+    .lista-skills {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-behavior: smooth;
+        gap: 15px;
+        
+        width: 100% !important; 
+        margin: 0 !important; 
+        padding: 10px 0 !important; 
+        box-sizing: border-box !important;
+        list-style: none !important;
+
+        scrollbar-width: none !important; 
+        -ms-overflow-style: none !important; 
+    }
+
+    .lista-skills .skill-item {
+        min-width: 100% !important; /* Mantém 1 caixa por vez */
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 20px 10px !important; 
+        box-sizing: border-box !important;
+    }
+
+    .lista-skills .skill-itens {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    .lista-skills::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    /* 3. ALINHAMENTO DOS PROJETOS NO CELULAR */
+    #projetos {
+        display: flex !important; /* Transforma os projetos em uma coluna reta */
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    #projetos article {
+        width: 100% !important; /* Garante que os cards de projetos ocupem a tela toda */
+        box-sizing: border-box !important;
+    }
+
 }
 
 /* =========================

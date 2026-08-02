@@ -154,26 +154,36 @@ async function iniciarScan() {
 
 
 const listaSkills = document.querySelector('.lista-skills');
+let intervaloSkills; // Variável para guardar o nosso timer
 
-if (listaSkills) {
-    // Só vai rodar a animação se a tela for de celular (até 768px)
-    if (window.innerWidth <= 768) {
+function iniciarCarrosselSkills() {
+    // Primeiro, limpamos qualquer animação que já esteja rodando para não duplicar
+    clearInterval(intervaloSkills);
+    
+    // Só inicia se a lista existir e a tela for de celular (menor ou igual a 768px)
+    if (listaSkills && window.innerWidth <= 768) {
         
-        setInterval(() => {
-            // Verifica se a rolagem chegou no final
-            // Usamos -5 para dar uma pequena margem de erro no cálculo do navegador
+        intervaloSkills = setInterval(() => {
+            // Verifica se chegou no final da rolagem
             const chegouNoFinal = listaSkills.scrollLeft + listaSkills.clientWidth >= listaSkills.scrollWidth - 5;
 
             if (chegouNoFinal) {
-                // Se chegou no fim, volta pro começo
+                // Volta pro começo
                 listaSkills.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
-                // Descobre a largura exata de UM item de habilidade
-                const larguraCard = listaSkills.querySelector('.skill-item').clientWidth;
-                
-                // Rola para a esquerda o tamanho de 1 card + os 15px de gap que colocamos no CSS
-                listaSkills.scrollBy({ left: larguraCard + 15, behavior: 'smooth' });
+                // Pega a largura do item para saber o quanto pular
+                const itemSkill = listaSkills.querySelector('.skill-item');
+                if (itemSkill) {
+                    const larguraCard = itemSkill.clientWidth;
+                    listaSkills.scrollBy({ left: larguraCard + 15, behavior: 'smooth' });
+                }
             }
-        }, 2500); // 2500 = passa a cada 2.5 segundos (um pouco mais rápido por serem cards menores)
+        }, 2500); 
     }
 }
+
+// Roda a função quando a página carregar
+iniciarCarrosselSkills();
+
+// Faz a função rodar de novo automaticamente se você mudar o tamanho da janela no PC
+window.addEventListener('resize', iniciarCarrosselSkills);
