@@ -18,16 +18,43 @@
 
 </head>
 
-<body>
+<body class="intro-active">
 
+    <div class="intro-screen" aria-hidden="true">
+        <div class="intro-terminal">
+            <div class="intro-line">
+                <span class="intro-prefix">[root@portfolio]$</span>
+                <span class="intro-text">booting system</span>
+                <span class="intro-cursor">_</span>
+            </div>
+            <div class="boot-log">
+                <div class="boot-line">[OK] Verifying kernel modules</div>
+                <div class="boot-line">[OK] Loading portfolio environment</div>
+                <div class="boot-line">[OK] Establishing secure connection</div>
+                <div class="boot-line">[RUN] Initializing interface...</div>
+            </div>
+            <div class="loader-panel" aria-label="Carregando portfólio">
+                <div class="loader-label">booting /portfolio</div>
+                <div class="loader-bar">
+                    <span class="loader-fill"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-shell">
+        <div class="shell-toolbar">
+            <span class="shell-prompt">~/portfolio</span>
+            <span class="shell-status">status: online • secure</span>
+        </div>
 
     <header>
 
-        <button id="btn-tema"><i class="fa-solid fa-moon"></i>Modo Escuro </button>
+
 
         <div class="logo">
             <h1>
-                <span class="cor-destaque">&lt;</span>Portfólio<span class="cor-destaque">/&gt;</span><span
+                <span class="cor-destaque">&lt;</span><span class="logo-text">Portfólio</span><span class="cor-destaque">/&gt;</span><span
                     class="cursor-pisca">_</span>
             </h1>
         </div>
@@ -154,9 +181,6 @@
                     </a>
                 </div>
             </article>
-            </article>
-
-
 
             <article>
                 <h3> Bot Telegram Milvus</h3>
@@ -257,6 +281,8 @@
             <a href="https://github.com/wandersonstt"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
     </footer>
+    </div>
+
 </body>
 
 </html>

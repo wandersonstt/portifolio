@@ -1,17 +1,3 @@
-const botao = document.getElementById('btn-tema');
-const corpo = document.body;
-
-botao.addEventListener('click', () => {
-
-    corpo.classList.toggle('dark-mode');
-
-    if (corpo.classList.contains('dark-mode')) {
-        botao.innerHTML = '<i class= "fa-solid fa-sun"></i> Modo Claro';
-    } else {
-        botao.innerHTML = '<i class= "fa-solid fa-moon"></i> Modo Escuro';
-
-    }
- });
 
 //puxa todos os repositorios do github que estão visivel, inclusivel os fork.
  //async function carregarProjetos() {
@@ -75,6 +61,12 @@ async function rastrearVisitante() {
 
 // Executa a função na hora que o site abre
 rastrearVisitante();
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.body.classList.remove('intro-active');
+    }, 2600);
+});
 
 
 /* =========================
@@ -157,37 +149,75 @@ const listaSkills = document.querySelector('.lista-skills');
 let intervaloSkills;
 let indiceAtual = 0;
 
+function moverParaSlideSkills(index) {
+    if (!listaSkills) return;
+
+    const itens = listaSkills.querySelectorAll('.skill-item');
+    if (!itens.length) return;
+
+    const itemAlvo = itens[index] || itens[0];
+    const esquerda = itemAlvo.offsetLeft;
+
+    listaSkills.scrollTo({
+        left: esquerda,
+        behavior: 'smooth',
+        inline: 'start'
+    });
+}
+
 function iniciarCarrosselSkills() {
     clearInterval(intervaloSkills);
-    
-    // Só roda se a tela for de celular
-    if (listaSkills && window.innerWidth <= 768) {
-        const itens = listaSkills.querySelectorAll('.skill-item');
-        const totalItens = itens.length;
 
-        if (totalItens === 0) return;
+    if (!listaSkills) return;
 
-        intervaloSkills = setInterval(() => {
-            if (indiceAtual >= totalItens - 1) {
-                indiceAtual = 0;
-                listaSkills.scrollTo({
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            } else {
-                indiceAtual++;
-                itens[indiceAtual].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',
-                    inline: 'start'
-                });
-            }
-        }, 2500); // Passa a cada 2.5 segundos
+    const itens = listaSkills.querySelectorAll('.skill-item');
+    const totalItens = itens.length;
+
+    if (window.innerWidth > 768 || totalItens <= 1) {
+        indiceAtual = 0;
+        listaSkills.scrollTo({ left: 0, behavior: 'auto', inline: 'start' });
+        return;
     }
+
+    moverParaSlideSkills(0);
+
+    intervaloSkills = setInterval(() => {
+        indiceAtual = (indiceAtual + 1) % totalItens;
+        moverParaSlideSkills(indiceAtual);
+    }, 3200);
 }
+
+window.addEventListener('resize', iniciarCarrosselSkills);
+window.addEventListener('load', () => iniciarCarrosselSkills());
 
 // Inicia o carrossel
 iniciarCarrosselSkills();
+
+const cardsProjetos = document.querySelectorAll('#projetos article');
+const secoes = document.querySelectorAll('section');
+
+const observerEntrada = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            if (entry.target.id === 'projetos') {
+                entry.target.querySelectorAll('article').forEach((card, index) => {
+                    card.style.transitionDelay = `${index * 0.08}s`;
+                    card.classList.add('show');
+                });
+            }
+            obs.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+secoes.forEach((secao) => {
+    observerEntrada.observe(secao);
+});
+
+cardsProjetos.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.08}s`;
+});
 
 // Recalcula se a janela for redimensionada
 window.addEventListener('resize', iniciarCarrosselSkills);
