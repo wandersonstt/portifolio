@@ -13,39 +13,83 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 
 
 </head>
 
-<body>
+<body class="intro-active">
 
+    <div class="intro-screen" aria-hidden="true">
+        <div class="intro-terminal">
+            <div class="intro-line">
+                <span class="intro-prefix">[root@portfolio]$</span>
+                <span class="intro-text">booting system</span>
+                <span class="intro-cursor">_</span>
+            </div>
+            <div class="boot-log">
+                <div class="boot-line">[OK] Verifying kernel modules</div>
+                <div class="boot-line">[OK] Loading portfolio environment</div>
+                <div class="boot-line">[OK] Establishing secure connection</div>
+                <div class="boot-line">[RUN] Initializing interface...</div>
+            </div>
+            <div class="loader-panel" aria-label="Carregando portfólio">
+                <div class="loader-label">booting /portfolio</div>
+                <div class="loader-bar">
+                    <span class="loader-fill"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-shell">
+        <div class="shell-toolbar">
+            <span class="shell-prompt">~/portfolio</span>
+            <span class="shell-status">status: online • secure</span>
+        </div>
 
     <header>
 
-        <button id="btn-tema"><i class="fa-solid fa-moon"></i>Modo Escuro </button>
 
 
-        <h1>Portfólio</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre"> Sobre mim</a></li>
-                <li><a href="#projetos"> Projetos</a></li>
-                <li><a href="#skills"> Habilidades</a></li>
-                <li><a href="#contato"> Contato</a></li>
-            </ul>
+        <div class="logo">
+            <h1>
+                <span class="cor-destaque">&lt;</span><span class="logo-text">Portfólio</span><span class="cor-destaque">/&gt;</span><span
+                    class="cursor-pisca">_</span>
+            </h1>
+        </div>
+
+        <nav class="menu-capsula">
+            <a href="#">
+                <i class="fa-solid fa-terminal"></i>
+                <span class="texto-menu">Início</span>
+            </a>
+
+            <a href="#projetos">
+                <i class="fa-solid fa-server"></i>
+                <span class="texto-menu">Sistemas</span>
+            </a>
+
+            <a href="#api-rede">
+                <i class="fa-solid fa-network-wired"></i>
+                <span class="texto-menu">Diagnóstico</span>
+            </a>
         </nav>
+
     </header>
     <main>
 
         <section id="sobre">
-            <h2> Sobre Mim</h2>
 
             <img src="imgp/perfil.jpg" alt="Foto do desenvolvedor Wanderson" class="foto-perfil">
+            <h2>Sobre</h2>
             <div class="box-txt">
                 <p>Ola! Me chamo Wanderson. Sou um profisisonal focado em resolver problema e construir sistemas
                     eficientes. Gosto de entender como as coisas funcionam por baixo dos panos, desde o codigo e
                     infraestrutura até o hardware.</p>
+
             </div>
+
 
 
 
@@ -54,16 +98,62 @@
 
         <section id="skills">
             <h2>Minhas Habilidades</h2>
-            <ul>
-                <li>C# e ecossitemas .NET(<i>Aprendendo)</i></li>
-                <li>Redes de Computadores</li>
-                <li>Manutenção de Hardware</li>
-                <li>HTML (<i>Aprendendo</i>)</li>
-                <li>JavaScript (<i>Aprendendo</i>)</li>
-                <li>CSS (<i>Aprendendo</i>)</li>
-                <li>Python (<i>Aprendendo</i>)</li>
-                <li>PHP (<i>Aprendendo</i>)</li>
-                <li>Json (<i>Aprendendo</i>)</li>
+            <ul class="lista-skills">
+                
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/cSharp.ico" alt="C#">
+                        C# e ecossitemas .NET<i>Aprendendo</i>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/redes-de-computadores.ico" alt="Redes de Computadores">
+                        Redes de Computadores
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/manutençao.ico" alt="Manutenção de Hardware">
+                        Manutenção de Hardware
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/html-5.ico" alt="HTML">
+                        HTML
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/js.ico" alt="JavaScript">
+                        JavaScript <i>Aprendendo</i>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/css-3.ico" alt="CSS">
+                        CSS
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/python.ico" alt="Python">
+                        Python <i>Aprendendo</i>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/php.ico" alt="PHP">
+                        PHP <i>Aprendendo</i>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill-itens">
+                        <img src="ico/arquivo-json.ico" alt="JSON">
+                        JSON
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -84,12 +174,13 @@
                     <span>JSON</span>
 
                 </div>
-                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
-                    <i class="fa-brands fa-github"></i> Ver codigo
-                </a>
+                <div class="github-link">
+                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
+                        class="btn-projeto">
+                        <i class="fa-brands fa-github"></i> Ver código
+                    </a>
+                </div>
             </article>
-
-
 
             <article>
                 <h3> Bot Telegram Milvus</h3>
@@ -100,9 +191,12 @@
                     <span>Telegram</span>
 
                 </div>
-                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
-                    <i class="fa-brands fa-github"></i> Ver codigo
-                </a>
+                <div class="github-link">
+                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
+                        class="btn-projeto">
+                        <i class="fa-brands fa-github"></i> Ver código
+                    </a>
+                </div>
             </article>
 
 
@@ -116,9 +210,12 @@
 
 
                 </div>
-                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
-                    <i class="fa-brands fa-github"></i> Ver codigo
-                </a>
+                <div class="github-link">
+                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
+                        class="btn-projeto">
+                        <i class="fa-brands fa-github"></i> Ver código
+                    </a>
+                </div>
             </article>
 
 
@@ -133,9 +230,12 @@
 
 
                 </div>
-                <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer" class="btn-projeto">
-                    <i class="fa-brands fa-github"></i> Ver codigo
-                </a>
+                <div class="github-link">
+                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
+                        class="btn-projeto">
+                        <i class="fa-brands fa-github"></i> Ver código
+                    </a>
+                </div>
             </article>
 
         </section>
@@ -156,6 +256,20 @@
                 </div>
             </div>
         </section>
+
+        <article class="card projeto-recon">
+            <h3><i class="fa-solid fa-satellite-dish"></i> Web Recon / Scanner</h3>
+            <p>Insira um domínio (ex: google.com) para rastrear informações de infraestrutura, IP e geolocalização do
+                servidor.</p>
+
+            <div class="input-grupo">
+                <input type="text" id="alvo" placeholder="Digite o domínio alvo...">
+                <button onclick="iniciarScan()"><i class="fa-solid fa-radar"></i> Escanear</button>
+            </div>
+
+            <!-- Tela do Terminal -->
+            <pre class="terminal-saida" id="resultado-scan">> Sistema online. Aguardando alvo...</pre>
+        </article>
     </main>
 
 
@@ -167,6 +281,8 @@
             <a href="https://github.com/wandersonstt"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
     </footer>
+    </div>
+
 </body>
 
 </html>
