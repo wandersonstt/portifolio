@@ -154,24 +154,29 @@ async function iniciarScan() {
 
 
 const listaSkills = document.querySelector('.lista-skills');
-let intervaloSkills; // Variável para guardar o nosso timer
+let intervaloSkills; 
+let ultimoScrollPos = -1; // Memória para guardar a última posição
 
 function iniciarCarrosselSkills() {
-    // Primeiro, limpamos qualquer animação que já esteja rodando para não duplicar
     clearInterval(intervaloSkills);
     
-    // Só inicia se a lista existir e a tela for de celular (menor ou igual a 768px)
     if (listaSkills && window.innerWidth <= 768) {
         
         intervaloSkills = setInterval(() => {
-            // Verifica se chegou no final da rolagem
-            const chegouNoFinal = listaSkills.scrollLeft + listaSkills.clientWidth >= listaSkills.scrollWidth - 5;
-
-            if (chegouNoFinal) {
-                // Volta pro começo
+            // ESTRATÉGIA BLINDADA: 
+            // Se ele tentou andar no último segundo, mas a posição atual é exatamente igual a anterior,
+            // significa que ele bateu na "parede" do final.
+            if (listaSkills.scrollLeft === ultimoScrollPos && listaSkills.scrollLeft > 0) {
+                
+                // Volta pro começo suavemente
                 listaSkills.scrollTo({ left: 0, behavior: 'smooth' });
+                ultimoScrollPos = -1; // Reseta a memória para começar de novo
+                
             } else {
-                // Pega a largura do item para saber o quanto pular
+                // 1. Guarda onde a barra de rolagem está agora
+                ultimoScrollPos = listaSkills.scrollLeft;
+                
+                // 2. Tenta rolar para o lado
                 const itemSkill = listaSkills.querySelector('.skill-item');
                 if (itemSkill) {
                     const larguraCard = itemSkill.clientWidth;
@@ -182,8 +187,8 @@ function iniciarCarrosselSkills() {
     }
 }
 
-// Roda a função quando a página carregar
+// Roda a função
 iniciarCarrosselSkills();
 
-// Faz a função rodar de novo automaticamente se você mudar o tamanho da janela no PC
+// Recalcula se virar o celular de lado
 window.addEventListener('resize', iniciarCarrosselSkills);
