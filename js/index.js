@@ -154,41 +154,41 @@ async function iniciarScan() {
 
 
 const listaSkills = document.querySelector('.lista-skills');
-let intervaloSkills; 
-let ultimoScrollPos = -1; // Memória para guardar a última posição
+let intervaloSkills;
+let indiceAtual = 0;
 
 function iniciarCarrosselSkills() {
     clearInterval(intervaloSkills);
     
+    // Só roda se a tela for de celular
     if (listaSkills && window.innerWidth <= 768) {
-        
+        const itens = listaSkills.querySelectorAll('.skill-item');
+        const totalItens = itens.length;
+
+        if (totalItens === 0) return;
+
         intervaloSkills = setInterval(() => {
-            // ESTRATÉGIA BLINDADA: 
-            // Se ele tentou andar no último segundo, mas a posição atual é exatamente igual a anterior,
-            // significa que ele bateu na "parede" do final.
-            if (listaSkills.scrollLeft === ultimoScrollPos && listaSkills.scrollLeft > 0) {
-                
-                // Volta pro começo suavemente
-                listaSkills.scrollTo({ left: 0, behavior: 'smooth' });
-                ultimoScrollPos = -1; // Reseta a memória para começar de novo
-                
-            } else {
-                // 1. Guarda onde a barra de rolagem está agora
-                ultimoScrollPos = listaSkills.scrollLeft;
-                
-                // 2. Tenta rolar para o lado
-                const itemSkill = listaSkills.querySelector('.skill-item');
-                if (itemSkill) {
-                    const larguraCard = itemSkill.clientWidth;
-                    listaSkills.scrollBy({ left: larguraCard + 15, behavior: 'smooth' });
-                }
+            // Avança para o próximo item
+            indiceAtual++;
+
+            // Se passar do último item, volta pro primeiro (índice 0)
+            if (indiceAtual >= totalItens) {
+                indiceAtual = 0;
             }
-        }, 2500); 
+
+            // Calcula a posição exata do card atual e rola suavemente
+            const posicaoScroll = itens[indiceAtual].offsetLeft;
+            listaSkills.scrollTo({
+                left: posicaoScroll,
+                behavior: 'smooth'
+            });
+
+        }, 2500); // Passa a cada 2.5 segundos
     }
 }
 
-// Roda a função
+// Inicia o carrossel
 iniciarCarrosselSkills();
 
-// Recalcula se virar o celular de lado
+// Recalcula se a janela for redimensionada
 window.addEventListener('resize', iniciarCarrosselSkills);
