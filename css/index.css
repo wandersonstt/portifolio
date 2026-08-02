@@ -509,6 +509,32 @@ footer a:hover {
 
 /* 5. RESPONSIVIDADE (Tudo que for celular fica AQUI DENTRO) */
 @media (max-width: 768px) {
+    
+    
+  
+    
+    /* Transforma a lista de habilidades num trilho horizontal */
+    .lista-skills {
+        display: flex;
+        flex-wrap: nowrap; /* Impede que os itens pulem para a linha de baixo */
+        overflow-x: auto;  /* Permite rolar para os lados */
+        scroll-behavior: smooth; 
+        gap: 15px; /* Espaço entre as habilidades */
+        padding-bottom: 15px;
+        padding-left: 0; /* Remove o espaçamento padrão da tag <ul> */
+    }
+
+    /* Define o tamanho de cada card de habilidade */
+    .lista-skills .skill-item {
+        min-width: 70%; /* Ocupa 70% da tela para mostrar um pedaço do próximo */
+        flex-shrink: 0; 
+    }
+
+    /* Oculta a barra de rolagem para ficar mais bonito */
+    .lista-skills::-webkit-scrollbar {
+        display: none;
+    }
+
 
     
     nav ul {

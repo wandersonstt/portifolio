@@ -150,3 +150,30 @@ async function iniciarScan() {
         console.error(erro); 
     }
 }
+
+
+
+const listaSkills = document.querySelector('.lista-skills');
+
+if (listaSkills) {
+    // Só vai rodar a animação se a tela for de celular (até 768px)
+    if (window.innerWidth <= 768) {
+        
+        setInterval(() => {
+            // Verifica se a rolagem chegou no final
+            // Usamos -5 para dar uma pequena margem de erro no cálculo do navegador
+            const chegouNoFinal = listaSkills.scrollLeft + listaSkills.clientWidth >= listaSkills.scrollWidth - 5;
+
+            if (chegouNoFinal) {
+                // Se chegou no fim, volta pro começo
+                listaSkills.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                // Descobre a largura exata de UM item de habilidade
+                const larguraCard = listaSkills.querySelector('.skill-item').clientWidth;
+                
+                // Rola para a esquerda o tamanho de 1 card + os 15px de gap que colocamos no CSS
+                listaSkills.scrollBy({ left: larguraCard + 15, behavior: 'smooth' });
+            }
+        }, 2500); // 2500 = passa a cada 2.5 segundos (um pouco mais rápido por serem cards menores)
+    }
+}
