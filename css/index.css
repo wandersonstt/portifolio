@@ -414,6 +414,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 h1 {
@@ -851,7 +852,8 @@ section::before {
     flex-wrap: wrap;
     gap: 22px;
     margin-top: 28px;
-    align-items: stretch;
+    align-items: center;
+    
 }
 
 #projetos article {
@@ -1125,7 +1127,7 @@ section::before {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 800;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     line-height: 1.2;
 }
 
@@ -1234,6 +1236,7 @@ section::before {
 
 
 .lista-skills {
+    text-align: center;
     list-style-type: none;
     padding: 18px;
     display: grid;
@@ -1247,10 +1250,11 @@ section::before {
 }
 
 .lista-skills li {
+    
     background: linear-gradient(135deg, rgba(6, 14, 22, 0.98), rgba(3, 9, 15, 0.96));
     padding: 14px;
     border-radius: 12px;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 6px 12px rgba(0, 0, 0, 0.16);
     transition: all 0.5s ease;
@@ -1289,9 +1293,11 @@ section::before {
 }
 
 .skill-itens {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     margin-top: 8px;
     color: #dfffd3;
