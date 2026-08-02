@@ -168,21 +168,20 @@ function iniciarCarrosselSkills() {
         if (totalItens === 0) return;
 
         intervaloSkills = setInterval(() => {
-            // Avança para o próximo item
-            indiceAtual++;
-
-            // Se passar do último item, volta pro primeiro (índice 0)
-            if (indiceAtual >= totalItens) {
+            if (indiceAtual >= totalItens - 1) {
                 indiceAtual = 0;
+                listaSkills.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                indiceAtual++;
+                itens[indiceAtual].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'start'
+                });
             }
-
-            // Calcula a posição exata do card atual e rola suavemente
-            const posicaoScroll = itens[indiceAtual].offsetLeft;
-            listaSkills.scrollTo({
-                left: posicaoScroll,
-                behavior: 'smooth'
-            });
-
         }, 2500); // Passa a cada 2.5 segundos
     }
 }
