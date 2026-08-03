@@ -1,302 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meu primeiro Portfólio!">
-    <meta name="keywords" content="Portfólio, Wanderson, Engenharia de Software, HTML, CSS, JS, C#">
-    <meta name="author" content="Wanderson Saraiva Torres">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meu primeiro Portfólio!" />
+    <meta
+      name="keywords"
+      content="Portfólio, Wanderson, Engenharia de Software, HTML, CSS, JS, C#"
+    />
+    <meta name="author" content="Wanderson Saraiva Torres" />
     <title>Portfólio</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css" />
     <script src="js/index.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+  </head>
 
-
-</head>
-
-<body class="intro-active">
-
+  <body class="intro-active">
     <div class="intro-screen" aria-hidden="true">
-        <div class="intro-terminal">
-            <div class="intro-line">
-                <span class="intro-prefix">[root@portfolio]$</span>
-                <span class="intro-text">booting system</span>
-                <span class="intro-cursor">_</span>
-            </div>
-            <div class="boot-log">
-                <div class="boot-line">[OK] Verifying kernel modules</div>
-                <div class="boot-line">[OK] Loading portfolio environment</div>
-                <div class="boot-line">[OK] Establishing secure connection</div>
-                <div class="boot-line">[RUN] Initializing interface...</div>
-            </div>
-            <div class="loader-panel" aria-label="Carregando portfólio">
-                <div class="loader-label">booting /portfolio</div>
-                <div class="loader-bar">
-                    <span class="loader-fill"></span>
-                </div>
-            </div>
+      <div class="intro-terminal">
+        <div class="intro-line">
+          <span class="intro-prefix">[root@portfolio]$</span>
+          <span class="intro-text">booting system</span>
+          <span class="intro-cursor">_</span>
         </div>
+        <div class="boot-log">
+          <div class="boot-line">[OK] Verifying kernel modules</div>
+          <div class="boot-line">[OK] Loading portfolio environment</div>
+          <div class="boot-line">[OK] Establishing secure connection</div>
+          <div class="boot-line">[RUN] Initializing interface...</div>
+        </div>
+        <div class="loader-panel" aria-label="Carregando portfólio">
+          <div class="loader-label">booting /portfolio</div>
+          <div class="loader-bar">
+            <span class="loader-fill"></span>
+          </div>
+        </div>
+      </div>
     </div>
 
-
     <nav class="menu-capsula">
-        <a href="#">
-            <i class="fa-solid fa-home"></i>
-            <span class="texto-menu">Início</span>
-        </a>
-        <a href="#sobre">
-            <i class="fa-solid fa-fingerprint"></i>
-            <span class="texto-menu">Sobre</span>
-        </a>
-        <a href="#skills">
-            <i class="fa-solid fa-laptop-code"></i>
-            <span class="texto-menu">Habilidades</span>
-        </a>
-        <a href="#projetos">
-            <i class="fa-solid fa-diagram-project"></i>
-            <span class="texto-menu">Sistemas</span>
-        </a>
-        <a href="#api-rede">
-            <i class="fa-solid fa-network-wired"></i>
-            <span class="texto-menu">Diagnóstico</span>
-        </a>
-        <a href="#contato">
-            <i class="fa-solid fa-address-book"></i>
-            <span class="texto-menu">Contato</span>
-        </a>
+      <a href="#">
+        <i class="fa-solid fa-home"></i>
+        <span class="texto-menu">Início</span>
+      </a>
+      <a href="#sobre">
+        <i class="fa-solid fa-fingerprint"></i>
+        <span class="texto-menu">Sobre</span>
+      </a>
+      <a href="#skills">
+        <i class="fa-solid fa-laptop-code"></i>
+        <span class="texto-menu">Habilidades</span>
+      </a>
+      <a href="#projetos">
+        <i class="fa-solid fa-diagram-project"></i>
+        <span class="texto-menu">Sistemas</span>
+      </a>
+      <a href="#api-rede">
+        <i class="fa-solid fa-network-wired"></i>
+        <span class="texto-menu">Diagnóstico</span>
+      </a>
+      <a href="#contato">
+        <i class="fa-solid fa-address-book"></i>
+        <span class="texto-menu">Contato</span>
+      </a>
     </nav>
-    
 
     <div class="site-shell">
-        <div class="shell-toolbar">
-            <span class="shell-prompt">~/portfolio</span>
-            <span class="shell-status">status: online • secure</span>
-        </div>
+      <div class="shell-toolbar">
+        <span class="shell-prompt">~/portfolio</span>
+        <span class="shell-status">status: online • secure</span>
+      </div>
 
-    <header>
-
-
-
+      <header>
         <div class="logo">
-            <h1>
-                <span class="cor-destaque">&lt;</span><span class="logo-text">Portfólio</span><span class="cor-destaque">/&gt;</span><span
-                    class="cursor-pisca">_</span>
-            </h1>
+          <h1>
+            <span class="cor-destaque">&lt;</span
+            ><span class="logo-text">Portfólio</span
+            ><span class="cor-destaque">/&gt;</span
+            ><span class="cursor-pisca">_</span>
+          </h1>
         </div>
-
-        
-
-    </header>
-    <main>
-
+      </header>
+      <main>
         <section id="sobre">
-
-            <img src="imgp/perfil.jpg" alt="Foto do desenvolvedor Wanderson" class="foto-perfil">
-            <h2>Sobre</h2>
-            <div class="box-txt">
-                <p>Ola! Me chamo Wanderson. Sou um profisisonal focado em resolver problema e construir sistemas
-                    eficientes. Gosto de entender como as coisas funcionam por baixo dos panos, desde o codigo e
-                    infraestrutura até o hardware.</p>
-
-            </div>
-
-
-
-
-
+          <img
+            src="imgp/perfil.jpg"
+            alt="Foto do desenvolvedor Wanderson"
+            class="foto-perfil"
+          />
+          <h2>Sobre</h2>
+          <div class="box-txt">
+            <p>
+              Ola! Me chamo Wanderson. Sou um profisisonal focado em resolver
+              problema e construir sistemas eficientes. Gosto de entender como
+              as coisas funcionam por baixo dos panos, desde o codigo e
+              infraestrutura até o hardware.
+            </p>
+          </div>
         </section>
 
         <section id="skills">
-            <h2>Minhas Habilidades</h2>
-            <ul class="lista-skills">
-                
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/cSharp.ico" alt="C#">
-                        C# e ecossitemas .NET<i>Aprendendo</i>
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/redes-de-computadores.ico" alt="Redes de Computadores">
-                        Redes de Computadores
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/manutençao.ico" alt="Manutenção de Hardware">
-                        Manutenção de Hardware
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/html-5.ico" alt="HTML">
-                        HTML
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/js.ico" alt="JavaScript">
-                        JavaScript <i>Aprendendo</i>
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/css-3.ico" alt="CSS">
-                        CSS
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/python.ico" alt="Python">
-                        Python <i>Aprendendo</i>
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/php.ico" alt="PHP">
-                        PHP <i>Aprendendo</i>
-                    </div>
-                </li>
-                <li class="skill-item">
-                    <div class="skill-itens">
-                        <img src="ico/arquivo-json.ico" alt="JSON">
-                        JSON
-                    </div>
-                </li>
-            </ul>
+          <h2>Minhas Habilidades</h2>
+          <ul class="lista-skills">
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/cSharp.ico" alt="C#" />
+                C# e ecossitemas .NET<i>Aprendendo</i>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img
+                  src="ico/redes-de-computadores.ico"
+                  alt="Redes de Computadores"
+                />
+                Redes de Computadores
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/manutençao.ico" alt="Manutenção de Hardware" />
+                Manutenção de Hardware
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/html-5.ico" alt="HTML" />
+                HTML
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/js.ico" alt="JavaScript" />
+                JavaScript <i>Aprendendo</i>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/css-3.ico" alt="CSS" />
+                CSS
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/python.ico" alt="Python" />
+                Python <i>Aprendendo</i>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/php.ico" alt="PHP" />
+                PHP <i>Aprendendo</i>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-itens">
+                <img src="ico/arquivo-json.ico" alt="JSON" />
+                JSON
+              </div>
+            </li>
+          </ul>
         </section>
 
         <div>
-            <h2 id="text-projeto">Meus Projetos</h2>
+          <h2 id="text-projeto">Meus Projetos</h2>
         </div>
 
         <section id="projetos">
+          <article>
+            <h3>NOC Monitoramento</h3>
+            <p>
+              Um sistema customizado de monitoramento de redes desenvolvido em
+              HTML, CSS, PHP, JSON, JAVASCRIPT.
+            </p>
+            <div class="tech-tags">
+              <span>PHP</span>
+              <span>HTML</span>
+              <span>JavaScript</span>
+              <span>JSON</span>
+            </div>
+            <div class="github-link">
+              <a
+                href="https://github.com/wandersonstt/pianel-NOC"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-projeto"
+              >
+                <i class="fa-brands fa-github"></i> Ver código
+              </a>
+            </div>
+          </article>
 
-            <article>
-                <h3>NOC Monitoramento</h3>
-                <p>Um sistema customizado de monitoramento de redes desenvolvido em HTML, CSS, PHP, JSON, JAVASCRIPT.
-                </p>
-                <div class="tech-tags">
-                    <span>PHP</span>
-                    <span>HTML</span>
-                    <span>JavaScript</span>
-                    <span>JSON</span>
+          <article>
+            <h3>Bot Telegram Milvus</h3>
+            <p>Bot para telegram, para chegar chamado do milvus</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>WebHook</span>
+              <span>Telegram</span>
+            </div>
+            <div class="github-link">
+              <a
+                href="https://github.com/wandersonstt/Bot-Milvus-telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-projeto"
+              >
+                <i class="fa-brands fa-github"></i> Ver código
+              </a>
+            </div>
+          </article>
 
-                </div>
-                <div class="github-link">
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
-                        class="btn-projeto">
-                        <i class="fa-brands fa-github"></i> Ver código
-                    </a>
-                </div>
-            </article>
+          <article>
+            <h3>Conversor de pdf</h3>
+            <p>Feito um Conversor de pdf em C# .NET</p>
+            <div class="tech-tags">
+              <span>C#</span>
+              <span>.NET</span>
+            </div>
+            <div class="github-link">
+              <a
+                href="https://github.com/wandersonstt/pdfZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-projeto"
+              >
+                <i class="fa-brands fa-github"></i> Ver código
+              </a>
+            </div>
+          </article>
 
-            <article>
-                <h3> Bot Telegram Milvus</h3>
-                <p>Bot para telegram, para chegar chamado do milvus</p>
-                <div class="tech-tags">
-                    <span>Python</span>
-                    <span>WebHook</span>
-                    <span>Telegram</span>
-
-                </div>
-                <div class="github-link">
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
-                        class="btn-projeto">
-                        <i class="fa-brands fa-github"></i> Ver código
-                    </a>
-                </div>
-            </article>
-
-
-
-            <article>
-                <h3> Conversor de pdf</h3>
-                <p>Feito um Conversor de pdf em C# .NET </p>
-                <div class="tech-tags">
-                    <span>C#</span>
-                    <span>.NET</span>
-
-
-                </div>
-                <div class="github-link">
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
-                        class="btn-projeto">
-                        <i class="fa-brands fa-github"></i> Ver código
-                    </a>
-                </div>
-            </article>
-
-
-
-            <article>
-                <h3>Baixador de video do youtube</h3>
-                <p>Programa para baixa videos do youtube C# .NET Biblioteca, FFmpeg (Manipulação de Mídia), yt-dlp
-                    (Manipulação de Streams Web)</p>
-                <div class="tech-tags">
-                    <span>C#</span>
-                    <span>.NET</span>
-
-
-                </div>
-                <div class="github-link">
-                    <a href="https://github.com/wandersonstt" target="_blank" rel="noopener noreferrer"
-                        class="btn-projeto">
-                        <i class="fa-brands fa-github"></i> Ver código
-                    </a>
-                </div>
-            </article>
-
+          <article>
+            <h3>Baixador de video do youtube</h3>
+            <p>
+              Programa para baixa videos do youtube C# .NET Biblioteca, FFmpeg
+              (Manipulação de Mídia), yt-dlp (Manipulação de Streams Web)
+            </p>
+            <div class="tech-tags">
+              <span>C#</span>
+              <span>.NET</span>
+            </div>
+            <div class="github-link">
+              <a
+                href="https://github.com/wandersonstt/Youtube-Downloader-Pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-projeto"
+              >
+                <i class="fa-brands fa-github"></i> Ver código
+              </a>
+            </div>
+          </article>
         </section>
 
         <section id="api-rede">
-            <h2>🌍 Conexão do Visitante</h2>
-            <p>Testando consumo de API Pública em tempo real:</p>
+          <h2>🌍 Conexão do Visitante</h2>
+          <p>Testando consumo de API Pública em tempo real:</p>
 
-            <div class="terminal-box">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <div class="terminal-body" id="dados-rede">
-                    <p>> Iniciando varredura de rede...</p>
-                    <!-- O JavaScript vai injetar os dados reais aqui! -->
-                </div>
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
             </div>
+            <div class="terminal-body" id="dados-rede">
+              <p>> Iniciando varredura de rede...</p>
+              <!-- O JavaScript vai injetar os dados reais aqui! -->
+            </div>
+          </div>
         </section>
 
         <article class="card projeto-recon">
-            <h3><i class="fa-solid fa-satellite-dish"></i> Web Recon / Scanner</h3>
-            <p>Insira um domínio (ex: google.com) para rastrear informações de infraestrutura, IP e geolocalização do
-                servidor.</p>
+          <h3>
+            <i class="fa-solid fa-satellite-dish"></i> Web Recon / Scanner
+          </h3>
+          <p>
+            Insira um domínio (ex: google.com) para rastrear informações de
+            infraestrutura, IP e geolocalização do servidor.
+          </p>
 
-            <div class="input-grupo">
-                <input type="text" id="alvo" placeholder="Digite o domínio alvo...">
-                <button onclick="iniciarScan()"><i class="fa-solid fa-radar"></i> Escanear</button>
-            </div>
+          <div class="input-grupo">
+            <input
+              type="text"
+              id="alvo"
+              placeholder="Digite o domínio alvo..."
+            />
+            <button onclick="iniciarScan()">
+              <i class="fa-solid fa-radar"></i> Escanear
+            </button>
+          </div>
 
-            <!-- Tela do Terminal -->
-            <pre class="terminal-saida" id="resultado-scan">> Sistema online. Aguardando alvo...</pre>
+          <!-- Tela do Terminal -->
+          <pre class="terminal-saida" id="resultado-scan">
+> Sistema online. Aguardando alvo...</pre
+          >
         </article>
-    </main>
+      </main>
 
-
-
-    <footer id="contato">
+      <footer id="contato">
         <h2>Vamos conversar ?</h2>
         <div class="links-contato">
-            <a href="mailto:wanderson_st@hotmail.com.br"><i class="fa-solid fa-envelope"></i> Mande um E-mail</a>
-            <a href="https://github.com/wandersonstt"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="mailto:wanderson_st@hotmail.com.br"
+            ><i class="fa-solid fa-envelope"></i> Mande um E-mail</a
+          >
+          <a href="https://github.com/wandersonstt"
+            ><i class="fa-brands fa-github"></i> GitHub</a
+          >
         </div>
-    </footer>
+      </footer>
     </div>
-
-</body>
-
+  </body>
 </html>
