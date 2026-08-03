@@ -1004,7 +1004,7 @@ section::before {
 
     body {
         display: block !important;
-        padding: 12px !important;
+        padding: 0 !important;
         margin: 0 !important;
         margin-top: 0 !important;
     }
