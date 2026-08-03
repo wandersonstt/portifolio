@@ -1102,7 +1102,7 @@ section::before {
         display: flex !important;
         flex-direction: column !important;
         gap: 14px !important;
-        width: 91% !important;
+        width: 90% !important;
         margin-top: 18px !important;
     }
 
