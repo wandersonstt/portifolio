@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Bubblegum+Sans&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bubblegum Sans", sans-serif;
+   
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    background: url('/background/vecteezy_illuminated-blue-stone-wall-texture-with-warm-glowing-lights_46831180.jpg');
+    background-size: cover;
+    backdrop-filter: blur(10px);
+   
+
+}
+
+.container {
+    backdrop-filter: blur(20px);
+
+    width: 420px;
+    background-color: #000000a2;
+    border: 5px solid rgba(56, 56, 56, 0.301);
+    color: white;
+    padding: 30px 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 40px 
+    
+    
+
+
+}
+
+.container h2 {
+
+    font-size: 26px;
+    text-align: left;
+    font-family: "Bitcount Prop Single", system-ui;
+
+}
+
+
+
+
+.box input {
+
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 20PX 45px 20px 20px;
+    margin: 10px 0 ;
+
+
+}
+
+
+
+.box input::placeholder {
+    color: rgb(255, 255, 255);
+    
+    
+}
+
+
+
+
+.topo {
+
+font-size: 50px;
+padding: 40px;
+align-items: center;
+text-align: center;
+margin-top: -40px;
+
+
+
+}
+
+.entrar {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    margin: 8px 5px 5px 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    
+
+
+}
+
+
+.entrar:hover {
+
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    color: rgb(252, 252, 252);
+    transition: 0.5s;
+
+
+}
+
+
+.lembra-senha {  
+    display:flex;
+    justify-content: space-between;
+    margin: 20px 0 15px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    
+    
+    
+
+}
+
+.lembra-senha label input {
+
+    accent-color: #fff;
+    margin-right: 5px;
+    cursor: pointer;
+    
+}
+
+.lembra-senha a {
+
+    text-decoration: none;
+    color: #fffffff3;
+    font-size: 15px;
+
+
+}
+
+.lembra-senha a:hover {
+    text-decoration: underline;
+    color: rgb(241, 156, 44);
+    font-size: 21px;
+    transition: 0.3s;
+
+
+
+}
+
+
+.cadastra-link  {
+    text-align: center;
+    font-size: 20px;
+
+
+ 
+}
+
+.cadastra-link a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.cadastra-link a:hover {
+    font-size: 40px;
+    transition: 0.2s;
+    
+
+}
