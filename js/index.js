@@ -221,3 +221,6 @@ cardsProjetos.forEach((card, index) => {
 
 // Recalcula se a janela for redimensionada
 window.addEventListener('resize', iniciarCarrosselSkills);
+
+
+
