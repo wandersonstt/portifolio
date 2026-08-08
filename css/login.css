@@ -11,12 +11,13 @@
 }
 
 body {
+    background-image: url(/background/fundo.png);
 
     display: flex;
     align-items: center;
     min-height: 100vh;
     justify-content: center;
-    background-image: url('/background/fundo.png');
+    
     background-size: cover;
     backdrop-filter: blur(10px);
    
@@ -25,7 +26,7 @@ body {
 
 .container {
     backdrop-filter: blur(20px);
-
+    
     width: 420px;
     background-color: #000000a2;
     border: 5px solid rgba(56, 56, 56, 0.301);
