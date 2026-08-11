@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>teste</title>
-    <script src="js\login.js"></script>
+    
     <link rel="stylesheet" href="css\login.css"/>
   </head>
   <body>
     <main>
-      <div class="container">
+      <div  class="container">
         <form>
             <h1 class="topo">LOGIN</h1>
           <h2>E-mail</h2>
           <div class="box">
-            <input type="email" placeholder="seu email" />
+            <input id="email" type="email" placeholder="seu email" />
           </div>
 
           <h2>Senha</h2>
           <div class="box">
-            <input type="password" placeholder="sua senha" />
+            <input id="password" type="password" placeholder="sua senha" />
           </div>
           <div class="lembra-senha">
             <label>
@@ -29,16 +29,22 @@
             <a class="esqueci" href="#"> Esqueci minha senha</a>
           </div>
 
-          <button class="entrar" type="submit">Login</button>
+          <button id="entrar" type="submit">Login</button>
 
           <di class="cadastra-link"> 
             <p> Não tem conta ? <a href="#">Cadastre-se</a></p>
-          </di>
+          </div>
 
 
 
         </form>
+
+        
       </div>
     </main>
+  
+  <script src="js\login.js"></script>
   </body>
+
+  
 </html>
